@@ -1,5 +1,5 @@
 require('./check-versions')()
-
+// var favicon = require('serve-favicon')
 var config = require('../config')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
@@ -24,7 +24,7 @@ var proxyTable = config.dev.proxyTable
 
 var app = express()
 var compiler = webpack(webpackConfig)
-
+// app.use(favicon(path.join(__dirname, 'static', 'favicon.ico')));
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
   quiet: true
